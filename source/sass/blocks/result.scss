@@ -1,0 +1,142 @@
+.result {
+  padding-bottom: 70px;
+  background-color: $grey-basic;
+}
+
+.result__list {
+  @include list-reset;
+  margin-bottom: 18px;
+}
+
+.result__item {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.result__pagination {
+  width: 100%;
+}
+
+.result__button {
+  margin-bottom: 26px;
+  width: 100%;
+  color: $blue-light-text;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 30px;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    .result__button-icon {
+      opacity: 0.6;
+    }
+  }
+
+  &:active {
+    .result__button-icon {
+      opacity: 0.3;
+    }
+  }
+}
+
+.result__button-icon {
+  display: block;
+  margin-right: 15px;
+  width: 18px;
+  height: 18px;
+  background-image: url("../../img/show-more-plus.svg");
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: $tablet-width) {
+  .result {
+    padding-bottom: 122px;
+  }
+
+  .result__list {
+    margin-bottom: 46px;
+  }
+
+  .result__item {
+    margin-bottom: 40px;
+
+    &:first-child {
+      margin-bottom: 42px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 41px;
+    }
+  }
+
+  .result__button {
+    margin-bottom: 51px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .result__button-icon {
+    margin-right: 25px;
+    width: 26px;
+    height: 26px;
+    background-size: 26px 26px;
+  }
+
+  .result__pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 35px 16px 28px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .result {
+    width: 951px;
+    margin-right: 84px;
+    padding-bottom: 137px;
+  }
+
+  .result__list {
+    margin-bottom: 62px;
+  }
+
+  .result__item {
+    margin-bottom: 30px;
+
+    &:first-child {
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .result__container {
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .result__button {
+    margin-left: calc(50%);
+    margin-bottom: 73px;
+    transform: translateX(-54%);
+  }
+
+  .result__pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 41px 16px 29px;
+  }
+}

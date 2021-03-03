@@ -1,0 +1,159 @@
+.traveller-profile {
+  position: relative;
+
+  &--online {
+    .traveller-profile__name-link {
+      &::before {
+        background-color: $green-online;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px 9px rgba($black-basic, 0.16);
+
+    .traveller-profile__img {
+      transform: scale(1.05);
+      transition: $transition-time ease-out transform;
+    }
+  }
+}
+
+.traveller-profile__info {
+  position: relative;
+  padding: 1px 20px 20px 20px;
+  background-color: $white-basic;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 2;
+}
+
+.traveller-profile__name {
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.traveller-profile__name-link {
+  color: $blue-light-text;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -16px;
+    width: 6px;
+    height: 6px;
+    background-color: $orange-indicator;
+    border-radius: 50%;
+  }
+}
+
+.traveller-profile__flags {
+  margin-top: -11px;
+  margin-bottom: 8px;
+}
+
+.traveller-profile__tags {
+  margin: 0 auto;
+  margin-bottom: 14px;
+}
+
+.traveller-profile__photo {
+  position: relative;
+  overflow: hidden;
+  width: 270px;
+  height: 270px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  img {
+    margin: 0;
+    object-fit: cover;
+  }
+}
+
+.traveller-profile__level {
+  position: absolute;
+  top: 17px;
+  left: 16px;
+}
+
+.traveller-profile__transport {
+  margin: 0 auto;
+  width: 150px;
+}
+
+@media (min-width: $tablet-width) {
+  .traveller-profile {
+    width: calc(50% - 25px);
+  }
+
+  .traveller-profile__info {
+    padding: 31px 20px 27px 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .traveller-profile__name {
+    margin-bottom: 26px;
+    font-size: 24px;
+    line-height: 22px;
+  }
+
+  .traveller-profile__name-link {
+    &::before {
+      top: 12px;
+      left: -22px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .traveller-profile__tags {
+    margin: 0 6px;
+    margin-bottom: 21px;
+  }
+
+  .traveller-profile__photo {
+    width: 285px;
+    height: 285px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    img {
+      width: 285px;
+      height: 285px;
+    }
+  }
+
+  .traveller-profile__flags {
+    margin-top: -44px;
+    margin-bottom: 13px;
+  }
+
+  .traveller-profile__level {
+    top: 20px;
+    left: 22px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .traveller-profile {
+    width: calc(50% - 30px);
+  }
+}

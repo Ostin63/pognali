@@ -1,0 +1,175 @@
+.trip-input {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.trip-input__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.trip-input__label {
+  display: inline-block;
+  margin-right: auto;
+  margin-bottom: 8px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.trip-input__unit {
+  display: block;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+
+.trip-input__pick {
+  position: relative;
+  width: 100%;
+  padding: 13px 90px 12px 90px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  text-align: center;
+  color: $blue-light-text;
+  border: 1px solid $grey-border;
+  border-radius: 4px;
+  outline: none;
+  appearance: textfield;
+
+  &:hover {
+    border-color: $grey-input-hover;
+  }
+
+  &:focus,
+  &:active {
+    border-color: $blue-dark-basic;
+  }
+}
+
+.trip-input__pick::-webkit-outer-spin-button,
+.trip-input__pick::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.trip-input__button {
+  position: absolute;
+  bottom: 15px;
+  width: 14px;
+  height: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  outline: none;
+  z-index: 1;
+
+  &--less {
+    left: 14px;
+  }
+
+  &--more {
+    right: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    line {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    line {
+      opacity: 0.3;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .trip-input {
+    padding-top: 24px;
+    border-top: 1px solid $grey-lines;
+  }
+
+  .trip-input__unit {
+    margin-right: 3px;
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 0.08em;
+
+    &--days {
+      margin-right: -4px;
+    }
+  }
+
+  .trip-input__label {
+    margin-bottom: 25px;
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+  }
+
+  .trip-input__pick {
+    padding: 22px 90px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .trip-input__button {
+    width: 20px;
+    height: 20px;
+    bottom: 26px;
+
+    &--less {
+      left: 23px;
+    }
+
+    &--more {
+      right: 23px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .trip-input {
+    align-items: center;
+    padding-top: 27px;
+    border-top: none;
+
+    &--days {
+      padding-top: 0;
+    }
+  }
+
+  .trip-input__wrapper {
+    width: auto;
+  }
+
+  .trip-input__pick {
+    width: 180px;
+    padding: 22px 70px;
+  }
+
+  .trip-input__unit {
+    margin-left: 35px;
+    opacity: 1;
+    order: 1;
+  }
+
+  .trip-input__label {
+    width: 200px;
+    margin-bottom: 0;
+    margin-right: 21px;
+    letter-spacing: 0;
+  }
+}

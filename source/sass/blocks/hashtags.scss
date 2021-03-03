@@ -1,0 +1,45 @@
+.hashtags {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  width: 188px;
+  justify-content: center;
+
+  &--left {
+    justify-content: flex-start;
+
+    .hashtags__item {
+      font-size: 15px;
+    }
+  }
+}
+
+.hashtags__item {
+  margin-right: 4px;
+  color: $grey-special;
+  line-height: 18px;
+  text-align: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .hashtags {
+    width: 233px;
+
+    &--left {
+      .hashtags__item {
+        font-size: 20px;
+        line-height: 23px;
+      }
+    }
+  }
+
+  .hashtags__item {
+    margin-right: 5px;
+    font-size: 20px;
+    line-height: 23px;
+  }
+}

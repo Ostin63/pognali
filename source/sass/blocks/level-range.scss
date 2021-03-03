@@ -1,0 +1,100 @@
+.level-range {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 11px;
+    background: linear-gradient(to bottom, $white-basic, $white-basic 5px, $grey-border 5px, $grey-border 6px, $white-basic 6px, $white-basic 11px);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}
+
+.level-range__input {
+  position: relative;
+  width: 110px;
+  padding: 8px 15px 8px 15px;
+  color: $blue-light-text;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 13px;
+  text-align: center;
+  border: 1px solid $grey-border;
+  outline: none;
+
+  &--min {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      z-index: 1;
+    }
+  }
+
+  &--max {
+    margin-left: -1px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  &:hover {
+    border: 1px solid $grey-input-hover;
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid $blue-dark-basic;
+  }
+}
+
+.level-range__input::-webkit-outer-spin-button,
+.level-range__input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .level-range {
+    &::before {
+      width: 21px;
+      height: 15px;
+      background: linear-gradient(to bottom, $white-basic, $white-basic 7px, $grey-border 7px, $grey-border 8px, $white-basic 8px, $white-basic 15px);
+    }
+  }
+
+  .level-range__input {
+    width: 74px;
+    font-size: 20px;
+    line-height: 20px;
+    padding-top: 12px;
+    padding-left: 12px;
+
+    &--min {
+      margin-right: -1px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .level-range {
+    &::before {
+      width: 20px;
+      height: 14px;
+      background: linear-gradient(to bottom, $white-basic, $white-basic 7px, $grey-border 7px, $grey-border 8px, $white-basic 8px, $white-basic 14px);
+    }
+  }
+
+  .level-range__input {
+    width: 96px;
+  }
+}

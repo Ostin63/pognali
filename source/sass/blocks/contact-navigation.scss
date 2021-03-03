@@ -1,0 +1,130 @@
+.contact-navigation {
+  @include list-reset;
+
+  &--promo {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    justify-content: center;
+  }
+}
+
+.contact-navigation__item {
+  margin-bottom: 23px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contact-navigation__link {
+  position: relative;
+  display: inline-block;
+  padding-left: 61px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: $blue-dark-main;
+
+  &:hover,
+  &:focus {
+    color: $yellow-dark;
+  }
+
+  &:active {
+    color: rgba($yellow-main, 0.3);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    background-color: $blue-dark-icon;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+  }
+
+  &--tel {
+    &::before {
+      background-image: url("../../img/contacts-phone.svg");
+      background-size: 18px 17px;
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        background-image: url("../img/contacts-phone-hover.svg");
+      }
+    }
+
+    &:active {
+      &::before {
+        background-image: url("../img/contacts-phone-active.svg");
+      }
+    }
+  }
+
+  &--mail {
+    &::before {
+      background-image: url("../../img/contacts-mail.svg");
+      background-size: 19px 13px;
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        background-image: url("../img/contacts-mail-hover.svg");
+      }
+    }
+
+    &:active {
+      &::before {
+        background-image: url("../img/contacts-mail-active.svg");
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .contact-navigation__item {
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 38px;
+  }
+
+  .contact-navigation__link {
+    padding-left: 91px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -28px;
+      width: 68px;
+      height: 68px;
+    }
+
+    &--tel {
+      &::before {
+        background-size: 28px 26px;
+      }
+    }
+
+    &--mail {
+      &::before {
+        top: -27px;
+        background-size: 28px 19px;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .contact-navigation {
+    display: none;
+  }
+}

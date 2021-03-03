@@ -1,0 +1,259 @@
+.route__list {
+  @include list-reset;
+}
+
+.route__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  margin-bottom: 24px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -13px;
+    width: 11px;
+    height: 2px;
+    background-color: $blue-light-text;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: -14px;
+    width: 2px;
+    height: 284px;
+    background-color: $blue-light-text;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.route__name {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 18px;
+  padding-left: 11px;
+  width: 185px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: none;
+    background-color: $blue-light-text;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    text-align: right;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
+    pointer-events: none;
+  }
+}
+
+.route__description {
+  width: 220px;
+  height: 220px;
+  padding: 8px 13px;
+  font-size: 16px;
+  line-height: 22px;
+  resize: none;
+  color: $grey-special;
+  border: 1px solid $grey-border;
+  border-radius: 4px;
+  outline: none;
+
+  &::placeholder {
+    color: rgba($grey-special, 0.3);
+  }
+
+  &:hover {
+    border: 1px solid $grey-input-hover;
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid $blue-dark-basic;
+
+    &::placeholder {
+      color: $grey-special;
+    }
+  }
+
+  &--alert {
+    border: 1px solid $red-error;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid $red-error;
+    }
+  }
+
+  &--alert + .route__alert-message {
+    display: block;
+  }
+}
+
+.route__alert-message {
+  display: none;
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  margin: 0;
+  padding: 8px 13px;
+  width: calc(220px - 2px);
+  background-color: $orange-alert;
+  color: $red-error;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.route__icon {
+  width: 35px;
+  height: 24px;
+  margin-bottom: 14px;
+}
+
+@media (min-width: $tablet-width) {
+  .route__list {
+    padding-top: 29px;
+    border-top: 1px solid $grey-lines;
+  }
+
+  .route__item {
+    margin-bottom: 42px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 23px;
+      left: auto;
+      right: 0;
+      width: 14px;
+      height: 14px;
+      background-color: $blue-light-text;
+      border-radius: 50%;
+    }
+
+    &::after {
+      top: 23px;
+      left: auto;
+      right: 6px;
+      width: 2px;
+      height: 120%;
+    }
+  }
+
+  .route__name {
+    width: 430px;
+    margin-bottom: 38px;
+    padding-right: 109px;
+    padding-left: 0;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .route__description {
+    width: 500px;
+    height: 142px;
+    padding: 18px 19px;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  .route__alert-message {
+    padding: 18px 19px;
+    width: calc(500px - 2px);
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  .route__icon {
+    width: 70px;
+    height: 47px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .route__list {
+    padding-top: 95px;
+  }
+
+  .route__item {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      top: 23px;
+      left: auto;
+      right: 225px;
+    }
+  }
+
+  .route__name {
+    margin-right: 85px;
+    padding: 0;
+    width: 730px;
+  }
+
+  .route__description {
+    width: 730px;
+    padding: 22px 22px;
+    line-height: 20px;
+  }
+
+  .route__alert-message {
+    padding: 22px 22px;
+    width: calc(730px - 2px);
+    line-height: 20px;
+  }
+
+  .route__icon {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -48px;
+      right: auto;
+      width: 14px;
+      height: 14px;
+      background-color: $blue-light-text;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

@@ -1,0 +1,103 @@
+.accept-checkbox {
+  position: relative;
+}
+
+.accept-checkbox__ticket {
+  position: relative;
+}
+
+.accept-checkbox__text {
+  position: relative;
+  padding-left: 40px;
+  font-size: 15px;
+  line-height: 15px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    border: 1px solid $grey-border;
+    border-radius: 4px;
+    transform: translateY(-50%);
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      border: 1px solid $grey-input-hover;
+    }
+  }
+
+  &:active {
+    &::before {
+      border: none;
+      background-color: $grey-decor;
+    }
+  }
+}
+
+.accept-checkbox__box:focus + .accept-checkbox__text {
+  &::before {
+    outline: 2px solid $blue-dark;
+    border-radius: 4px;
+  }
+}
+
+.accept-checkbox__box:checked + .accept-checkbox__text {
+  &::before {
+    background-image: url("../../img/tick.svg");
+    background-size: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:active {
+    &::before {
+      background-image: url("../../img/tick-disabled.svg");
+      background-color: $grey-decor;
+    }
+  }
+}
+
+.accept-checkbox__box:disabled + .accept-checkbox__text::before,
+.accept-checkbox__box:disabled:checked + .accept-checkbox__text::before {
+  background-image: url("../../img/tick-disabled.svg");
+  background-size: 11px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $grey-decor;
+  border: none;
+}
+
+@media (min-width: $tablet-width) {
+  .accept-checkbox__text {
+    padding-left: 59px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    &::before {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .accept-checkbox__ticket {
+    letter-spacing: 0.12em;
+  }
+
+  .accept-checkbox__box:checked + .accept-checkbox__text::before {
+    background-size: 11px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .accept-checkbox {
+    padding-top: 56px;
+  }
+}

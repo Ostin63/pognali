@@ -1,0 +1,44 @@
+.review-quote {
+  width: 161px;
+  color: $white-basic;
+}
+
+.review-quote__text {
+  margin: 0;
+  margin-bottom: 17px;
+  font-weight: 300;
+}
+
+.review-quote__author {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@media (min-width: $tablet-width) {
+  .review-quote {
+    width: 264px;
+  }
+
+  .review-quote__text {
+    margin-bottom: 45px;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .review-quote__author {
+    font-size: 21px;
+    line-height: 25px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .review-quote__text {
+    margin-bottom: 42px;
+  }
+
+  .review-quote__author {
+    font-size: 21px;
+    line-height: 25px;
+  }
+}

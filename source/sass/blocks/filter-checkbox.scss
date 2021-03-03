@@ -1,0 +1,116 @@
+.filter-checkbox {
+  @include list-reset;
+  margin-bottom: 7px;
+}
+
+.filter-checkbox__item {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.filter-checkbox__label {
+  position: relative;
+  padding-left: 27px;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black-basic;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background-color: $white-basic;
+    border-radius: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.filter-checkbox__tag:checked + .filter-checkbox__label::before {
+  background-image: url("../../img/tick.svg");
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.filter-checkbox__tag:focus + .filter-checkbox__label {
+  &::before {
+    outline: 2px solid $blue-dark;
+    border-radius: 4px;
+  }
+}
+
+.filter-checkbox__tag:disabled + .filter-checkbox__label {
+  opacity: 0.3;
+}
+
+.filter-checkbox__tag:disabled:checked + .filter-checkbox__label {
+  opacity: 0.3;
+}
+
+@media (min-width: $tablet-width) {
+  .filter-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    padding-top: 10px;
+  }
+
+  .filter-checkbox__item {
+    margin-bottom: 0;
+    width: 150px;
+    margin-right: 21px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .filter-checkbox__label {
+    padding-left: 36px;
+    font-size: 20px;
+
+    &::before {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg {
+      width: 23px;
+      height: 22px;
+    }
+  }
+
+  .filter-checkbox__tag:checked + .filter-checkbox__label::before {
+    background-size: 11px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .filter-checkbox {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 12px;
+  }
+
+  .filter-checkbox__item {
+    width: auto;
+    margin-bottom: 16px;
+  }
+}

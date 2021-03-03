@@ -1,0 +1,9 @@
+@keyframes {
+  from {
+    stroke-dashaoffset: 0, calc(2 * 3.14 * 26);
+  }
+
+  to {
+    stroke-dashaoffset: calc(3.14 * 26 * 50 / 50);
+  }
+}

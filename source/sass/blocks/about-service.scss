@@ -1,0 +1,176 @@
+.about-service {
+  @include section-bottom-border;
+  padding-top: 70px;
+  padding-bottom: 83px;
+  background-color: $blue-dark-basic;
+  background-image: url("../img/about-mobile@1x.png");
+  background-size: 292px 352px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/about-mobile@2x.png");
+  }
+}
+
+.about-service__container {
+  padding: 0 50px;
+  border-bottom-right-radius: $mobile-radius;
+  border-bottom-left-radius: $mobile-radius;
+}
+
+.about-service__title {
+  margin-bottom: 19px;
+}
+
+.about-service__text {
+  margin: 0;
+  margin-bottom: 20px;
+  width: 211px;
+  color: $white-basic;
+  font-weight: 300;
+
+  &--bold {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  br {
+    display: none;
+  }
+}
+
+.about-service__button {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .about-service {
+    padding: 0;
+    background-color: $blue-dark;
+    background-image: none;
+  }
+
+  .about-service__container {
+    position: relative;
+    padding-top: 37px;
+    padding-left: 74px;
+    padding-bottom: 89px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 688px;
+      height: 212px;
+      background-color: $blue-decor-items;
+      border-radius: 20px;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 48px;
+      right: 8px;
+      width: 376px;
+      height: 548px;
+      background-image: url("../img/about-tablet@1x.png");
+      background-size: 376px 548px;
+      background-repeat: no-repeat;
+      z-index: -1;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/about-tablet@2x.png");
+      }
+    }
+  }
+
+  .about-service__title {
+    position: relative;
+    margin-bottom: 40px;
+    grid-column: 1/2;
+  }
+
+  .about-service__text {
+    position: relative;
+    margin-bottom: 31px;
+    width: 308px;
+    font-size: 28px;
+    line-height: 33px;
+    grid-column: 1/2;
+
+    &--bold {
+      font-size: 21px;
+      line-height: 25px;
+      margin-bottom: 54px;
+    }
+
+    br {
+      display: block;
+    }
+  }
+
+  .about-service__button {
+    display: inline-flex;
+    grid-column: 1/2;
+    position: relative;
+    width: 275px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .about-service {
+    padding-top: 152px;
+    background-color: $blue-dark-main;
+  }
+
+  .about-service__container {
+    display: grid;
+    grid-template-columns: 690px auto;
+    padding-left: 130px;
+    padding-bottom: 163px;
+    padding-right: 60px;
+
+    &::before {
+      left: 60px;
+      width: 212px;
+      height: 212px;
+    }
+
+    &::after {
+      top: -6px;
+      bottom: 0;
+      right: 60px;
+      width: 630px;
+      height: 665px;
+      background-image: url("../img/about-desktop@1x.png");
+      background-size: 630px 665px;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/about-desktop@2x.png");
+      }
+    }
+  }
+
+  .about-service__title {
+    margin-bottom: 60px;
+  }
+
+  .about-service__text {
+    width: 619px;
+    margin-bottom: 40px;
+
+    &--bold {
+      width: 425px;
+      margin-bottom: 85px;
+    }
+
+    br {
+      display: none;
+    }
+  }
+}

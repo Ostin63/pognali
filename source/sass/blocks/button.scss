@@ -1,0 +1,86 @@
+.button {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: transparent;
+  border-style: none;
+  border-radius: 0;
+  cursor: pointer;
+
+  &--primary {
+    color: $blue-light-text;
+    width: 100%;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    justify-content: flex-start;
+    padding: 22px;
+    background-color: $yellow-main;
+    border-radius: 10px;
+
+    &:hover,
+    &:focus {
+      background-color: $yellow-dark;
+    }
+
+    &:active {
+      color: rgba($blue-light-text, 0.3);
+
+      &::after {
+        opacity: 0.3;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 24px;
+      right: 22px;
+      width: 13px;
+      height: 13px;
+      background-image: url("../img/triangle-arrow-right.svg");
+      background-size: 13px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @media (min-width: $tablet-width) {
+      font-size: 24px;
+      line-height: 24px;
+      padding: 29px 74px 27px 33px;
+      border-radius: 20px;
+
+      &::after {
+        top: 34px;
+        right: 35px;
+        width: 13px;
+        height: 13px;
+        background-size: 13px;
+      }
+    }
+  }
+
+  &--secondary {
+    padding: 5px 10px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $blue-light-text;
+    background-color: $yellow-main;
+    border-radius: 25px;
+
+    &:hover,
+    &:focus {
+      background-color: $yellow-dark;
+    }
+
+    &:active {
+      color: rgba($blue-light-text, 0.3);
+    }
+  }
+}

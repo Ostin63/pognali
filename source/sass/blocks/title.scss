@@ -1,0 +1,45 @@
+.title {
+  margin: 0;
+  font-weight: 700;
+
+  &--small {
+    font-size: 20px;
+    line-height: 20px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  }
+
+  &--idx-medium {
+    font-size: 24px;
+    line-height: 24px;
+    color: $orange-special;
+
+    @media (min-width: $tablet-width) {
+      font-size: 45px;
+      line-height: 45px;
+    }
+  }
+
+  &--form-medium {
+    font-size: 24px;
+    line-height: 24px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  }
+
+  &--large {
+    font-size: 36px;
+    line-height: 36px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+}

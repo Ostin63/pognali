@@ -1,0 +1,80 @@
+.state-names {
+  @include list-reset;
+  padding: 21px 19px;
+  border: 1px solid $grey-border;
+  border-top: none;
+
+  &--catalog {
+    width: 220px;
+    margin-left: 25px;
+    padding: 14px 0;
+    border: none;
+  }
+}
+
+.state-names__item {
+  margin-bottom: 3px;
+  color: $grey-special;
+}
+
+.state-names__link {
+  font-size: 16px;
+  line-height: 22px;
+  color: $grey-special;
+
+  &:hover,
+  &:focus {
+    color: $blue-light-text;
+  }
+
+  &:active {
+    color: rgba($blue-light-text, 0.3);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .state-names {
+    padding: 37px 28px 33px 26px;
+    border: none;
+    border-left: 1px solid rgba($grey-calendar, 0.5);
+
+    &--catalog {
+      margin: 0;
+      padding: 0;
+      width: 156px;
+      font-size: 20px;
+      line-height: 30px;
+      border: none;
+
+      .state-names__item {
+        margin: 0;
+      }
+
+      .state-names__link {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .state-names__item {
+    margin-bottom: 7px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .state-names__link {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .state-names {
+    &--catalog {
+      display: none;
+    }
+  }
+}

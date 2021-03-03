@@ -1,0 +1,50 @@
+.plans {
+  @include section-top-border;
+  margin-top: -29px;
+  padding-top: 26px;
+  padding-bottom: 59px;
+  background-color: $grey-dark-form;
+}
+
+.plans__title {
+  margin-bottom: 29px;
+  color: $blue-light-text;
+}
+
+@media (min-width: $tablet-width) {
+  .plans {
+    margin-top: -30px;
+    padding-top: 53px;
+    padding-bottom: 118px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+
+  .plans__title {
+    margin-bottom: 52px;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .plans__container {
+    padding: 0 75px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .plans {
+    @include section-top-border;
+    margin-top: -56px;
+    padding-top: 51px;
+    padding-bottom: 107px;
+  }
+
+  .plans__title {
+    margin-bottom: 49px;
+    padding-left: 7px;
+  }
+
+  .plans__container {
+    padding: 0 60px 0 124px;
+  }
+}
